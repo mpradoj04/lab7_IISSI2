@@ -11,7 +11,7 @@ import { AuthorizationContext } from '../../context/AuthorizationContext'
 import { showMessage } from 'react-native-flash-message'
 import restaurantLogo from '../../../assets/restaurantLogo.jpeg'
 
-export default function RestaurantsScreen ({ navigation }) {
+export default function RestaurantsScreen ({ navigation, route }) {
   const [restaurants, setRestaurants] = useState([])
   const { loggedInUser } = useContext(AuthorizationContext)
 
@@ -34,7 +34,7 @@ export default function RestaurantsScreen ({ navigation }) {
     } else {
       setRestaurants(null)
     }
-  }, [loggedInUser])
+  }, [loggedInUser, route])
 
   const renderRestaurant = ({ item }) => {
     return (

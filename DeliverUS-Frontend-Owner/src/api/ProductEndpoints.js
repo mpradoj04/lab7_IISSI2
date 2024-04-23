@@ -1,7 +1,11 @@
-import { get } from './helpers/ApiRequestsHelper'
+import { get, post } from './helpers/ApiRequestsHelper'
 
 function getProductCategories () {
   return get('productCategories')
 }
 
-export { getProductCategories }
+function create (data) {
+  return post('products', data)
+}
+
+export { getProductCategories, create }
